@@ -28,11 +28,11 @@ AddEventHandler('esx_gear:kyslikovamaska', function()
 			SetPedDiesInWater(playerPed, false)
 			
 			ESX.ShowNotification(_U('usedoxygen') .. '%.')
-			Citizen.Wait(1000000)
+			Citizen.Wait(100000)
 			ESX.ShowNotification(_U('vyprazdnovani', '~y~', '50') .. '%.')
-			Citizen.Wait(500000)
+			Citizen.Wait(50000)
 			ESX.ShowNotification(_U('vyprazdnovani', '~o~', '25') .. '%.')
-			Citizen.Wait(500000)
+			Citizen.Wait(50000)
 			ESX.ShowNotification(_U('vyprazdnovani', '~r~', '0') .. '%.')
 			
 			SetPedDiesInWater(playerPed, true)
@@ -46,18 +46,22 @@ end)
 RegisterNetEvent('esx_gear:nightvision')
 AddEventHandler('esx_gear:nightvision', function()
 	TriggerEvent("skinchanger:getSkin", function(skin)
-		skin.helmet_1 = 116
+		if skin.sex == 0 then
+			skin.helmet = 116
+		else
+			skin.helmet_1 = 115
+		end        
 		skin.helmet_2 = 0
 		TriggerEvent("skinchanger:loadSkin", skin)
 	end)
-    SetNightvision(true)
+	SetNightvision(true)
 
 	ESX.ShowNotification(_U('nightvision') .. '%.')
-	Citizen.Wait(10000)
+	Citizen.Wait(50000)
 	ESX.ShowNotification(_U('vybijeni', '~y~', '50') .. '%.')
-	Citizen.Wait(5000)
+	Citizen.Wait(25000)
 	ESX.ShowNotification(_U('vybijeni', '~o~', '25') .. '%.')
-	Citizen.Wait(5000)
+	Citizen.Wait(25000)
 	ESX.ShowNotification(_U('vybijeni', '~r~', '0') .. '%.')
 
 	SetNightvision(false)
@@ -72,19 +76,22 @@ end)
 RegisterNetEvent('esx_gear:thermalvision')
 AddEventHandler('esx_gear:thermalvision', function()
 	TriggerEvent("skinchanger:getSkin", function(skin)
-		skin.helmet_1 = 118
+		if skin.sex == 0 then
+			skin.helmet = 118
+		else
+			skin.helmet_1 = 117
+		end        
 		skin.helmet_2 = 0
 		TriggerEvent("skinchanger:loadSkin", skin)
 	end)
-
 	SetSeethrough(true)
 
 	ESX.ShowNotification(_U('thermalvision') .. '%.')
-	Citizen.Wait(10000)
+	Citizen.Wait(500000)
 	ESX.ShowNotification(_U('vybijeni', '~y~', '50') .. '%.')
-	Citizen.Wait(5000)
+	Citizen.Wait(25000)
 	ESX.ShowNotification(_U('vybijeni', '~o~', '25') .. '%.')
-	Citizen.Wait(5000)
+	Citizen.Wait(25000)
 	ESX.ShowNotification(_U('vybijeni', '~r~', '0') .. '%.')
 
 	SetSeethrough(false)
