@@ -47,9 +47,9 @@ RegisterNetEvent('esx_gear:nightvision')
 AddEventHandler('esx_gear:nightvision', function()
 	TriggerEvent("skinchanger:getSkin", function(skin)
 		if skin.sex == 0 then
-			skin.helmet = 116
+			skin.helmet = 147
 		else
-			skin.helmet_1 = 115
+			skin.helmet_1 = 146
 		end        
 		skin.helmet_2 = 0
 		TriggerEvent("skinchanger:loadSkin", skin)
@@ -77,9 +77,9 @@ RegisterNetEvent('esx_gear:thermalvision')
 AddEventHandler('esx_gear:thermalvision', function()
 	TriggerEvent("skinchanger:getSkin", function(skin)
 		if skin.sex == 0 then
-			skin.helmet = 118
+			skin.helmet = 159
 		else
-			skin.helmet_1 = 117
+			skin.helmet_1 = 158
 		end        
 		skin.helmet_2 = 0
 		TriggerEvent("skinchanger:loadSkin", skin)
