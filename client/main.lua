@@ -10,65 +10,60 @@ end)
 RegisterNetEvent('esx_gear:kyslikovamaska')
 AddEventHandler('esx_gear:kyslikovamaska', function()
     TriggerEvent("skinchanger:getSkin", function(skin)
-		if skin.sex == 0 then
-			skin.glasses_1 = 26
-			skin.tshirt_1 = 179
-		else
-			skin.glasses_1 = ?
-			skin.tshirt_1 = ?
-		end        
-		skin.glasses_2 = 0
-		skin.tshirt_2 = 0
-		TriggerEvent("skinchanger:loadSkin", skin)
-	end)
-			
 		SetPedDiesInWater(PlayerPedId(), false)
+		local oxygen
+
+		if skin.sex == 0 then
+			oxygen = Config.SkinId.maleDiving
+		else
+			oxygen = Config.SkinId.femaleDiving
+		end        
+
+		TriggerEvent("skinchanger:loadClothes", skin, oxygen)
+	end)
+
 			ESX.ShowNotification(_U('usedoxygen') .. '%.')
 			Citizen.Wait(100000)
 			ESX.ShowNotification(_U('vyprazdnovani', '~y~', '50') .. '%.')
-			Citizen.Wait(50000)
+			Citizen.Wait(5000)
 			ESX.ShowNotification(_U('vyprazdnovani', '~o~', '25') .. '%.')
-			Citizen.Wait(50000)
+			Citizen.Wait(5000)
 			ESX.ShowNotification(_U('vyprazdnovani', '~r~', '0') .. '%.')
 			
 			SetPedDiesInWater(PlayerPedId(), true)
 			TriggerEvent("skinchanger:getSkin", function(skin)
-				skin.glasses_1 = 0
-				skin.glasses_2 = 0
-				skin.tshirt_1 = 0
-				skin.tshirt_2 = 0
-				TriggerEvent("skinchanger:loadSkin", skin)
+				oxygen = Config.SkinId.oxygenrest
+				TriggerEvent("skinchanger:loadClothes", skin, oxygen)
 			end)
-		end)
-	end)
 end)
 --nightvision--
 RegisterNetEvent('esx_gear:nightvision')
 AddEventHandler('esx_gear:nightvision', function()
 	TriggerEvent("skinchanger:getSkin", function(skin)
+		local nightvision
+
 		if skin.sex == 0 then
-			skin.helmet_1 = 147
+			nightvision = Config.SkinId.maleNight
 		else
-			skin.helmet_1 = ?
+			nightvision = Config.SkinId.femaleNight
 		end        
-		skin.helmet_2 = 0
-		TriggerEvent("skinchanger:loadSkin", skin)
+		
+		TriggerEvent("skinchanger:loadClothes", skin, nightvision)
 	end)
 	SetNightvision(true)
 
 	ESX.ShowNotification(_U('nightvision') .. '%.')
-	Citizen.Wait(50000)
+	Citizen.Wait(5000)
 	ESX.ShowNotification(_U('vybijeni', '~y~', '50') .. '%.')
-	Citizen.Wait(25000)
+	Citizen.Wait(2500)
 	ESX.ShowNotification(_U('vybijeni', '~o~', '25') .. '%.')
-	Citizen.Wait(25000)
+	Citizen.Wait(2500)
 	ESX.ShowNotification(_U('vybijeni', '~r~', '0') .. '%.')
 
 	SetNightvision(false)
 	TriggerEvent("skinchanger:getSkin", function(skin)
-		skin.helmet_1 = -1
-		skin.helmet_2 = 0
-		TriggerEvent("skinchanger:loadSkin", skin)
+		nightvision = Config.SkinId.Nightrest
+		TriggerEvent("skinchanger:loadClothes", skin, nightvision)
 	end)
 
 end)
@@ -76,28 +71,29 @@ end)
 RegisterNetEvent('esx_gear:thermalvision')
 AddEventHandler('esx_gear:thermalvision', function()
 	TriggerEvent("skinchanger:getSkin", function(skin)
+		local thermal
+
 		if skin.sex == 0 then
-			skin.helmet_1 = 159
+			thermal = Config.SkinId.maleThermal
 		else
-			skin.helmet_1 = ?
+			thermal = Config.SkinId.femaleThermal
 		end        
-		skin.helmet_2 = 0
-		TriggerEvent("skinchanger:loadSkin", skin)
+		
+		TriggerEvent("skinchanger:loadClothes", skin, thermal)
 	end)
 	SetSeethrough(true)
 
 	ESX.ShowNotification(_U('thermalvision') .. '%.')
-	Citizen.Wait(500000)
+	Citizen.Wait(5000)
 	ESX.ShowNotification(_U('vybijeni', '~y~', '50') .. '%.')
-	Citizen.Wait(25000)
+	Citizen.Wait(2500)
 	ESX.ShowNotification(_U('vybijeni', '~o~', '25') .. '%.')
-	Citizen.Wait(25000)
+	Citizen.Wait(2500)
 	ESX.ShowNotification(_U('vybijeni', '~r~', '0') .. '%.')
 
 	SetSeethrough(false)
 	TriggerEvent("skinchanger:getSkin", function(skin)
-		skin.helmet_1 = -1
-		skin.helmet_2 = 0
-		TriggerEvent("skinchanger:loadSkin", skin)
+		thermal = Config.SkinId.thermalrest
+		TriggerEvent("skinchanger:loadClothes", skin, thermal)
 	end)
 end)	
