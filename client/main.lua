@@ -22,6 +22,7 @@ AddEventHandler('esx_gear:kyslikovamaska', function()
 		TriggerEvent("skinchanger:loadSkin", skin)
 	end)
 			
+		SetPedDiesInWater(PlayerPedId(), false)
 			ESX.ShowNotification(_U('usedoxygen') .. '%.')
 			Citizen.Wait(100000)
 			ESX.ShowNotification(_U('vyprazdnovani', '~y~', '50') .. '%.')
