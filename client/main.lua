@@ -11,11 +11,11 @@ RegisterNetEvent('esx_gear:kyslikovamaska')
 AddEventHandler('esx_gear:kyslikovamaska', function()
     TriggerEvent("skinchanger:getSkin", function(skin)
 		if skin.sex == 0 then
-			skin.glasses = 26
-			skin.tshirt = 179
+			skin.glasses_1 = 26
+			skin.tshirt_1 = 179
 		else
-			skin.glasses = ?
-			skin.tshirt = ?
+			skin.glasses_1 = ?
+			skin.tshirt_1 = ?
 		end        
 		skin.glasses_2 = 0
 		skin.tshirt_2 = 0
@@ -30,11 +30,11 @@ AddEventHandler('esx_gear:kyslikovamaska', function()
 			Citizen.Wait(50000)
 			ESX.ShowNotification(_U('vyprazdnovani', '~r~', '0') .. '%.')
 			
-			SetPedDiesInWater(playerPed, true)
+			SetPedDiesInWater(PlayerPedId(), true)
 			TriggerEvent("skinchanger:getSkin", function(skin)
-				skin.glasses = 0
+				skin.glasses_1 = 0
 				skin.glasses_2 = 0
-				skin.tshirt = 0
+				skin.tshirt_1 = 0
 				skin.tshirt_2 = 0
 				TriggerEvent("skinchanger:loadSkin", skin)
 			end)
@@ -46,7 +46,7 @@ RegisterNetEvent('esx_gear:nightvision')
 AddEventHandler('esx_gear:nightvision', function()
 	TriggerEvent("skinchanger:getSkin", function(skin)
 		if skin.sex == 0 then
-			skin.helmet = 147
+			skin.helmet_1 = 147
 		else
 			skin.helmet_1 = ?
 		end        
@@ -76,7 +76,7 @@ RegisterNetEvent('esx_gear:thermalvision')
 AddEventHandler('esx_gear:thermalvision', function()
 	TriggerEvent("skinchanger:getSkin", function(skin)
 		if skin.sex == 0 then
-			skin.helmet = 159
+			skin.helmet_1 = 159
 		else
 			skin.helmet_1 = ?
 		end        
