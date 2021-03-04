@@ -97,3 +97,36 @@ AddEventHandler('esx_gear:thermalvision', function()
 		TriggerEvent("skinchanger:loadClothes", skin, thermal)
 	end)
 end)	
+
+RegisterNetEvent('esx_gear:gasmask')
+AddEventHandler('esx_gear:gasmask', function()
+	TriggerEvent("skinchanger:getSkin", function(skin)
+		local gas
+
+		if skin.sex == 0 then
+			gas = Config.SkinId.maleGas
+		else
+			gas = Config.SkinId.femaleGas
+		end        
+		
+		TriggerEvent("skinchanger:loadClothes", skin, gas)
+	end)
+	SetEntityProofs(PlayerPedId(), false, false, false, false, false, false, true, true, false)
+	
+
+	ESX.ShowNotification(_U('gasmask') .. '%.')
+	Citizen.Wait(10000)
+	ESX.ShowNotification(_U('filtr', '~y~', '50') .. '%.')
+	Citizen.Wait(5000)
+	ESX.ShowNotification(_U('filtr', '~o~', '25') .. '%.')
+	Citizen.Wait(5000)
+	ESX.ShowNotification(_U('filtr', '~r~', '0') .. '%.')
+
+	SetEntityProofs(PlayerPedId(), false, false, false, false, false, false, false, false, false)
+
+	
+	TriggerEvent("skinchanger:getSkin", function(skin)
+		gas = Config.SkinId.Gasrest
+		TriggerEvent("skinchanger:loadClothes", skin, gas)
+	end)
+end)
