@@ -4,4 +4,6 @@ Locales ['cs'] = {
     ['nightvision'] = 'Nandal jsi si ~b~Night Vision~y~, ted uvidíš vse co se jen hýbne. Kapacita Baterie: ~g~100~w~',
     ['vybijeni'] = '~g~Kapacita baterie:~y~ %s%s~w~',
     ['thermalvision'] = 'Nandal jsi si ~o~Thermal Vision~y~. Kapacita Baterie: ~g~100~w~',
+    ['gasmask'] = 'Nandal jsi si ~o~Plynovou Masku~y~. Vydrz filtru: ~g~100~w~',
+    ['filtr'] = '~g~Vydrz filtru:~y~ %s%s~w~',
 }
