@@ -39,7 +39,18 @@ Config.SkinId = {
     oxygenrest = {
         glasses_1 = 0, glasses_2 = 0, 
         tshirt_1 = 0, tshirt_2 = 0
-    }
+    },
 
+    maleGas = {
+       mask_1 = 36, mask_2 = 0
+    },
+
+    femaleGas = {
+       mask_1 = 0, mask_2 = 0
+    },
+
+    Gasrest = {
+        mask_1 = 0, mask_2 = 0
+    }
 
 }
